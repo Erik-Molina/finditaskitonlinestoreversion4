@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Find it, Ask it S.A</title>
+  <link rel="stylesheet" href="assets/styles/generalstyles.css" />
+  <link rel="stylesheet" href="assets/styles/generalmediaquieres.css" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+</head>
+<body>
+<header class="main-header">
+  <!-- Versión escritorio -->
+  <div class="brand">
+    <h1>Find it, Ask it S.A</h1>
+    <p class="subtitle">Fiabilidad, Acción, Seguridad</p>
+  </div>
+
+  <div class="search-container">
+    <span class="material-icons icon">search</span>
+    <input type="text" placeholder="Buscar productos..." id="searchInput" />
+    <span class="material-icons icon clear-icon" id="clearSearch" style="display: none;">close</span>
+  </div>
+
+  <nav class="header-icons">
+    <div class="icon-with-text" id="openCartModal">
+      <span class="material-icons icon">shopping_cart</span>
+      <p>Carrito</p>
+    </div>
+    <div class="icon-with-text" id="openOffersModal">
+      <span class="material-icons icon">local_offer</span>
+      <p>Ofertas</p>
+    </div>
+    <div class="icon-with-text" id="openSellModal">
+      <span class="material-icons icon">storefront</span>
+      <p>Vender</p>
+    </div>
+    <div class="icon-with-text" id="toggleMode">
+      <span class="material-icons icon">light_mode</span>
+      <p>Modo</p>
+    </div>
+
+    <!-- Botón Volver con <a> -->
+<div class="icon-with-text">
+  <a href="https://erik-molina.github.io/tiendaonlinever5/inicio" class="back-link">
+    <span class="material-icons icon">arrow_back</span>
+    <p>Volver</p>
+  </a>
+</div>
+
+  </nav>
+
+  <!-- Versión móvil -->
+  <div class="mobile-header">
+    <div class="mobile-brand-container">
+      <div class="mobile-brand">
+        <h1>Find it, Ask it S.A</h1>
+        <p class="subtitle">Fiabilidad, Acción, Seguridad</p>
+      </div>
+      <div class="mobile-buttons">
+        <button class="mobile-menu-item" id="openCartModalMobile">
+          <span class="material-icons">shopping_cart</span>
+        </button>
+        <button class="filter-toggle" id="filterToggle">
+          <span class="material-icons">filter_list</span>
+        </button>
+        <button class="menu-toggle" id="menuToggle">
+          <span class="material-icons">menu</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="mobile-search-container">
+      <span class="material-icons icon">search</span>
+      <input type="text" id="mobileSearchInput" placeholder="Buscar productos..." />
+      <span class="material-icons icon clear-icon mobile-clear-search" style="display: none;">close</span>
+    </div>
+  </div>
+
+  <nav class="mobile-nav" id="mobileNav">
+    <button class="close-menu" id="closeMenu">
+      <span class="material-icons">close</span>
+    </button>
+    <div class="mobile-menu-items">
+      <div class="mobile-menu-item" id="openOffersModalMobile">
+        <span class="material-icons">local_offer</span> Ofertas
+      </div>
+      <div class="mobile-menu-item" id="openSellModalMobile">
+        <span class="material-icons">storefront</span> Vender
+      </div>
+      <div class="mobile-menu-item" id="mobileToggleMode">
+        <span class="material-icons">light_mode</span> Modo
+      </div>
+
+      <!-- Volver en móvil como <a> dentro de div -->
+    <div class="mobile-menu-item">
+      <a href="https://erik-molina.github.io/tiendaonlinever5/inicio" class="mobile-link">
+        <span class="material-icons">arrow_back</span>
+        Volver
+      </a>
+    </div>
+
+    </div>
+  </nav>
+</header>
+
+
+  <main class="main-content">
+    <!-- Contenedor de Filtros -->
+    <div class="filters-container" id="filtersContainer">
+      <button class="toggle-filters" id="toggleFilters">
+        <span class="material-icons">filter_list</span>
+      </button>
+      
+      <div class="filters-content">
+        <button class="close-filters" id="closeFilters">
+          <span class="material-icons">close</span>
+        </button>
+        <h3>Rubros</h3>
+        <p style="font-size: 12px;">seleccione su rubro de interes</p>
+        <div class="filter-group">
+          <label class="filter-item">
+            <input type="radio" name="rubro" value="ferreteria">
+            <span>Ferreteria</span>
+          </label>
+          <label class="filter-item">
+            <input type="radio" name="rubro" value="moda">
+            <span>Moda</span>
+          </label>
+          <label class="filter-item">
+            <input type="radio" name="rubro" value="tecnologia">
+            <span>Tecnología</span>
+          </label>
+        </div>
+
+        <h3>Categorías</h3>
+        <div class="filter-group" id="categoriesContainer">
+          <!-- Las categorías se llenarán dinámicamente -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Contenedor de Productos -->
+    <div class="products-container" id="productsContainer">
+      <!-- Contenido vacío por ahora -->
+    </div>
+  </main>
+
+  <!-- Modales -->
+  <div class="modal" id="cartModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Carrito de Compras</h2>
+        <button class="close-modal" id="closeCartModal">
+          <span class="material-icons">close</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <!-- Contenido del carrito se añadirá aquí -->
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="offersModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Ofertas Especiales</h2>
+        <button class="close-modal" id="closeOffersModal">
+          <span class="material-icons">close</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <!-- Contenido de ofertas se añadirá aquí -->
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="sellModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Vender Productos</h2>
+        <button class="close-modal" id="closeSellModal">
+          <span class="material-icons">close</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <!-- Contenido de vender se añadirá aquí -->
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="assets/scripts/cardproduction.js"></script>
+  <script type="module" src="assets/scripts/headerscroll.js"></script>
+  <script src="assets/scripts/modals.js"></script>
+  <script src="assets/scripts/filtermenutoggle.js"></script>
+  <script src="assets/scripts/modechange.js"></script>
+</body>
+</html>
