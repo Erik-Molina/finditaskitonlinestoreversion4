@@ -186,7 +186,7 @@ function openProductImagesModal(images, product) {
           </div>
           <div class="div2">
             <h3 class="product-name">${product.nombre}</h3>
-            <p class="product-price">L ${product.precio}</p>
+            <p class="product-price">${product.precio}</p>
             <div class="product-details">
               <p><strong>Código:</strong> ${product.id}</p>
               <p>${product.detalles}</p>
